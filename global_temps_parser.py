@@ -2,7 +2,7 @@ import pandas as pd
 import os, io, requests
 
 #Set to your working directory
-os.chdir('/Users/hausfath/Desktop/Climate Science/')
+os.chdir('/Users/csamaras/Desktop/Climate Science/')
 
 #File URLs
 gistemp_file = 'https://data.giss.nasa.gov/gistemp/tabledata_v3/GLB.Ts+dSST.csv'
