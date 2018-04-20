@@ -1,5 +1,6 @@
 import pandas as pd
 import os, io, requests
+import functools
 
 #Set to your working directory
 os.chdir('/Users/csamaras/Desktop/Climate Science/')
@@ -87,7 +88,7 @@ def combined_global_temps(start_year, end_year):
     cowtan_and_way = rebaseline(import_cowtan_way(cowtan_way_file), start_year, end_year)
 
     dfs = [hadley, gistemp, noaa, berkeley, cowtan_and_way]
-    df_final = reduce(lambda left,right: pd.merge(left,right,on=['year', 'month'], how='outer'), dfs)
+    df_final = functools.reduce(lambda left,right: pd.merge(left,right,on=['year', 'month'], how='outer'), dfs)
     return df_final.round(3)
 
 
